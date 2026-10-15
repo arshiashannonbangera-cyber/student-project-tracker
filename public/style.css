@@ -1,1 +1,252 @@
 
+/* ---------- Pink theme: base styles ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #65384e;
+  background-color: #fff1f6;
+  background-image: radial-gradient(#f6c5d8 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+header,
+main {
+  width: 100%;
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ---------- Cute page heading ---------- */
+
+header {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 28px;
+  background-color: #ffffff;
+  border: 1px solid #f4c4d7;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(190, 85, 127, 0.08);
+}
+
+header::after {
+  content: "♡  ✧";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  color: #e68bad;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  padding-right: 55px;
+  color: #b83270;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  line-height: 1.2;
+}
+
+header p {
+  margin: 0;
+  color: #92647b;
+  font-size: 1.05rem;
+}
+
+/* ---------- Main sections ---------- */
+
+section {
+  position: relative;
+  margin-bottom: 26px;
+  padding: 26px;
+  background-color: #ffffff;
+  border: 1px solid #f2c5d8;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(190, 85, 127, 0.07);
+}
+
+h2 {
+  margin: 0 0 20px;
+  color: #a72d65;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+section h2::before {
+  content: "♡ ";
+  color: #e68bad;
+}
+
+/* ---------- Form controls ---------- */
+
+#project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#project-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+label {
+  color: #713b56;
+  font-weight: 650;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  font: inherit;
+  color: #65384e;
+  background-color: #fff8fb;
+  border: 1px solid #e9b2ca;
+  border-radius: 10px;
+}
+
+input::placeholder {
+  color: #b18a9d;
+}
+
+input:hover,
+select:hover {
+  border-color: #d979a4;
+}
+
+/* ---------- Pink buttons ---------- */
+
+button {
+  min-height: 46px;
+  padding: 10px 20px;
+  font: inherit;
+  font-weight: 650;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+#save-button {
+  align-self: flex-start;
+  color: #ffffff;
+  background-color: #d94f8a;
+  border-color: #d94f8a;
+  box-shadow: 0 4px 10px rgba(217, 79, 138, 0.2);
+}
+
+#save-button::before {
+  content: "♡  ";
+}
+
+#save-button:hover {
+  background-color: #bd3471;
+  border-color: #bd3471;
+}
+
+#cancel-button {
+  align-self: flex-start;
+  color: #a72d65;
+  background-color: #fff0f6;
+  border-color: #e9b2ca;
+}
+
+#cancel-button:hover {
+  background-color: #fce0ec;
+}
+
+/* ---------- Keyboard accessibility ---------- */
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid #c13c7a;
+  outline-offset: 3px;
+}
+
+/* ---------- Status message ---------- */
+
+#message {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  color: #713b56;
+  background-color: #fff5f9;
+  border-radius: 9px;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Project list and empty state ---------- */
+
+#empty-state {
+  margin: 0;
+  padding: 15px;
+  color: #95667e;
+  background-color: #fff5f9;
+  border: 1px dashed #e9b2ca;
+  border-radius: 12px;
+}
+
+#empty-state::before {
+  content: "✿  ";
+  color: #d94f8a;
+}
+
+#project-list {
+  margin: 0;
+  padding-left: 24px;
+}
+
+#project-list:empty {
+  display: none;
+}
+
+/* ---------- Responsive layout ---------- */
+
+@media (max-width: 560px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  header {
+    margin-bottom: 22px;
+    padding: 24px 18px;
+  }
+
+  header::after {
+    top: 12px;
+    right: 14px;
+    font-size: 1rem;
+  }
+
+  h1 {
+    padding-right: 35px;
+  }
+
+  section {
+    margin-bottom: 20px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  h2 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+
+  #save-button,
+  #cancel-button {
+    width: 100%;
+  }
+}
